@@ -266,10 +266,9 @@ section {
 }
 
 #our-lastest-work .inner-container .btn-work-type.selected {
-	height: 33px;
 	background-color: #2b9b2b;
 	color: #a5cda5;	
-	border: none;
+	border: 1px solid #2b9b2b;
 }
 
 #photography-btn {
