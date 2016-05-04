@@ -64,11 +64,51 @@ function validateEmptyInputFields(element,event) {
 
 } //validateEmptyInputFields
 
+//contact form validations
+function validateContactForm(){
+	var contactFormInputName = document.getElementById("input-name"),
+		contactFormInputEmail = document.getElementById("input-email"),
+		contactFormInputMessage = document.getElementById("input-message");
 
+	//validate if the name field is empty
+	if (contactFormInputName.value.length==0 || contactFormInputName.value=="Your Name.."){
+		//alert("Please provide your name.");
+		sweetAlert("Please provide your name.");
+		contactFormInputName.focus();
+		return false;
+	}
+	//validate if the email field is empty
+	if (contactFormInputEmail.value.length==0 || contactFormInputEmail.value=="Your Email.."){
+		//alert("Please provide your Email.");
+		sweetAlert("Please provide your Email.");
+		contactFormInputEmail.focus();
+		return false;
+	}	
+
+	//validate if a valid email was provided
+	var emailPattern = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
+	if (!emailPattern.test(contactFormInputEmail.value)){
+		//alert("Please provide a valid email address");
+		sweetAlert("Please provide a valid email address");
+		contactFormInputEmail.focus();
+		return false;
+	}
+	//validate if the message field is empty
+	if (contactFormInputMessage.value.length==0 || contactFormInputMessage.value=="Your Message.."){
+		//alert("Please provide a Message.");
+		sweetAlert("Please provide a Message.");
+		contactFormInputMessage.focus();
+		return false;
+	}
+
+
+
+} //validate contact form
+
+//Listeners for search box
 
 var searchBox = document.getElementById("search-box");
 
-//Listeners for search box
 searchBox.addEventListener('blur',function(){
 	clearSearchBox('resetOnBlur');
 },false);
@@ -105,3 +145,8 @@ inputMessage.addEventListener('focus',function(){
 inputMessage.addEventListener('blur',function(){
 	validateEmptyInputFields('inputMessage','resetOnBlur');
 },false);
+
+//Listener for submit button
+var submitButton = document.getElementById("submit-send");
+console.log(submitButton);
+submitButton.addEventListener("click",validateContactForm,false);
