@@ -100,13 +100,25 @@ function validateContactForm(){
 		contactFormInputMessage.focus();
 		return false;
 	}
-
-
-
 } //validate contact form
 
-//Listeners for search box
+//change selected item
+function changeSelected(e) {
+	var galleryButtons = document.getElementsByClassName("btn-work-type"),
+		clickedButton = e.target;
 
+	for (var i = 0; i <= galleryButtons.length-1; i++) {
+		galleryButtons[i].classList.remove("selected");
+	}
+	e.target.classList.add("selected");
+
+}
+
+var galleryButtonContainer = document.getElementById("btn-work-type-container");
+
+galleryButtonContainer.addEventListener('click',changeSelected,false);
+
+//Listeners for search box
 var searchBox = document.getElementById("search-box");
 
 searchBox.addEventListener('blur',function(){
@@ -148,5 +160,4 @@ inputMessage.addEventListener('blur',function(){
 
 //Listener for submit button
 var submitButton = document.getElementById("submit-send");
-console.log(submitButton);
 submitButton.addEventListener("click",validateContactForm,false);

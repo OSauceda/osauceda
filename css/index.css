@@ -135,11 +135,6 @@ header .btn-scroll {
     transition: all 0.5s ease;
 }
 
-header .btn-scroll:hover {
-	opacity: 2;
-    filter: alpha(opacity=200); /* For IE8 and earlier */	
-}
-
 section {
 	width: 100%;
 }
@@ -261,6 +256,13 @@ section {
 	font-size: 16px;
 	font-weight: 300;
 	border: 1px solid #2b9b2b;
+	transition: all 0.5s ease;
+}
+
+#our-lastest-work .inner-container .btn-work-type:hover {
+	cursor: pointer;
+	opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */	
 }
 
 #our-lastest-work .inner-container .btn-work-type.selected {
