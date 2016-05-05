@@ -28,12 +28,12 @@
 				<li><a href="#">Contact Us</a></li>
 			</ul>
 			<img src="./img/switch.png" alt="">
-			<input type="text" value="Search..." id="search-box">
+			<input type="text" value="" id="search-box" placeholder="Search...">
 		</nav>
 		<h1>Art is Eternal Happiness</h1>
 		<a href="#" class="btn-stnd btn-work-with-us center-element">WORK WITH US</a>
 		
-		<a href="#" class="btn-stnd btn-scroll center-element">scroll down&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+		<a href="#" class="btn-stnd btn-scroll center-element">scroll down<i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 	</div>	<!-- inner-container -->
 	</header> <!-- header -->
 
@@ -43,19 +43,20 @@
 			<div class="horizontal-line"></div>
 			<p>Lorem ipsum dolor sit amet. Proin gravida nibh vel velit auctor aliquet.</p>
 			<div class="info-container">
-				<div class="info-img center-background-img center-element"  id="photo"></div>
+				<div class="info-img center-element"><i class="fa fa-camera-retro" aria-hidden="true"></i></div>
 				<h4>Lorem Ipsum</h4>
 				<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,</p>
 				<a href="#" class="btn-stnd btn-learn-more center-element">Learn more</a>
 			</div> <!-- info container -->
 			<div class="info-container">
-				<div class="info-img center-background-img center-element" id="speed"></div>
+				<div class="info-img center-element"><i class="fa fa-tachometer" aria-hidden="true"></i></div>
 				<h4>Lorem Ipsum</h4>
 				<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,</p>
 				<a href="#" class="btn-stnd btn-learn-more center-element">Learn more</a>
 			</div> <!-- info container -->
 			<div class="info-container">
-				<div class="info-img center-background-img center-element" id="portfolio"></div>
+				<div class="info-img center-element"><i class="fa fa-briefcase" aria-hidden="true"></i>
+</div>
 				<h4>Lorem Ipsum</h4>
 				<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,</p>
 				<a href="#" class="btn-stnd btn-learn-more center-element">Learn more</a>
@@ -85,7 +86,7 @@
 				<div class="gallery-element" id="image-10"></div>
 			</div><!--gallery container -->
 
-			<a href="#" class="btn-stnd btn-view-more-work center-element">View more work&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+			<a href="#" class="btn-stnd btn-view-more-work center-element">View more work<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 
 		</div><!-- inner-container -->
 	</section> <!-- out-lastest-work -->
@@ -128,7 +129,7 @@
 				<div class="client-logo-container" id="apple-logo"></div>
 				<div class="client-logo-container" id="asus-logo"></div>
 			</div> <!-- client container -->
-			<a href="#" class="btn-stnd btn-see-all-client center-element">See all client&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+			<a href="#" class="btn-stnd btn-see-all-client center-element">See all client<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 
 		</div><!-- inner container -->
 	</section> <!-- clients -->
@@ -261,15 +262,17 @@
 				<p>10044 West 23th Street, Suite 721<br>
 					New York NY 10010
 				</p>
-				<div><h6>Email:&nbsp;</h6><a href="#">Username@email.com</a></div>
+				<div><h6>Email:&nbsp;</h6><a href="#">Username@email.com</a></div>	
 				<div><h6>Phone:&nbsp;</h6><a href="#">+1 (0) 123 4567 890</a></div>
 				<div><h6>Fax:&nbsp;</h6><a href="#">+1 (0) 321 4567 890</a></div>
 
 				<div class="contact-form-container">
-					<input type="text" value="Your Name.." id="input-name" required>
-					<input type="text" value="Your Email.." id="input-email">
-					<textarea id="input-message" cols="35" rows="6">Your Message..</textarea>
-					<input type="submit" value="SEND" id="submit-send">
+					<form class="contact-form" id="contact-us-form">
+						<input type="text" value="" placeholder="Your Name.." id="input-name">
+						<input type="text" value="" placeholder="Your Email.." id="input-email">
+						<textarea id="input-message" cols="35" rows="6" placeholder="Your Message.."></textarea>
+						<input type="submit" value="SEND" id="submit-send">
+					</form>
 				</div> <!-- contact form container -->
 			</div> <!-- information inner container -->
 		</div> <!-- inner-container -->
@@ -277,6 +280,7 @@
 	</section> <!-- company-information -->
 
 	<footer>
+		<div class="inner-container center-element"></div>
 	</footer> <!-- footer -->
 	<div id="made-by" class="center-text">
 		<div class="inner-container center-element">
@@ -287,8 +291,8 @@
 	<!-- javascript -->
 	<script src="./js/index.js"></script>
 
-	<!-- jquery 
+	<!-- jquery -->
 	<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
-	<script src="./js/jquery.js"></script> -->
+	<script src="./js/jquery.js"></script> 
 </body>
 </html>

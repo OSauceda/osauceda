@@ -1,3 +1,7 @@
+.btn-scroll.i {
+	margin-left: 10px;
+}
+
 .inner-container {
 	width: 1170px;
 	height: 100%;
@@ -35,6 +39,10 @@
     filter: alpha(opacity=50); /* For IE8 and earlier */
 }
 
+i {
+	margin-left: 10px;
+}
+
 header {
 	height: 660px;
 	width: 100%;
@@ -43,6 +51,11 @@ header {
  	-moz-background-size: cover;
  	-o-background-size: cover;
  	background-size: cover;
+ 	transition: all 0.5s ease;
+}
+
+header.scrolled {
+	height: 900px;
 }
 
 header nav {
@@ -135,6 +148,15 @@ header .btn-scroll {
     transition: all 0.5s ease;
 }
 
+header .btn-scroll:hover{
+	opacity: 0.8;
+	filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+header .btn-scroll.scrolled {
+	margin-top:405px;
+}
+
 section {
 	width: 100%;
 }
@@ -187,23 +209,19 @@ section {
 	height: 140px;
 	border-radius: 20px;
 	background-color: #e1f3e1;
+	line-height: 140px;
+	vertical-align: middle;
+	font-size: 85px;
+	color: #54d154;
+}
+
+#what-we-do .inner-container .info-container .info-img i {
+	margin: 0 auto;
 }
 
 #what-we-do .inner-container .info-container .info-img.center-background-img {
 	background-repeat: no-repeat;
 	background-position: center center;	
-}
-
-#photo {
-	background-image: url("../img/camera.png");
-}
-
-#speed {
-	background-image: url("../img/speedometer.png");
-}
-
-#portfolio {
-	background-image: url("../img/briefcase.png");
 }
 
 #what-we-do .inner-container .info-container h4 {
@@ -287,6 +305,7 @@ section {
 	width: 950px;
 	font-size: 0;
 	margin-top: 43px;
+	height: 372px;
 }
 
 #our-lastest-work .inner-container .gallery-container .gallery-element {
@@ -695,7 +714,7 @@ section {
 	margin-top: 25px;
 }
 
-#contact-us .contact-form-container input[type=text] {
+#contact-us .contact-form-container .contact-form input[type=text] {
 	padding: 5px 0 0 15px;
 	font-size: 16px;
 	background-color: #444444;
@@ -706,7 +725,7 @@ section {
 	width: 311px;
 }
 
-#contact-us .contact-form-container input[type=submit] {
+#contact-us .contact-form-container .contact-form input[type=submit] {
 	background-color: #2b9b2b;
 	color: #abd1ab;
 	font-size: 14px;
@@ -715,12 +734,12 @@ section {
 	transition: all 0.5s ease;
 }
 
-#contact-us .contact-form-container input[type=submit]:hover {
+#contact-us .contact-form-container .contact-form input[type=submit]:hover {
 	cursor: pointer;
 	opacity: 0.8;
 }
 
-#contact-us .contact-form-container textarea {
+#contact-us .contact-form-container .contact-form textarea {
 	font-size: 16px;
 	background-color: #444444;
 	border: none;
@@ -742,8 +761,12 @@ section {
 }
 
 footer {
+	background-color: #222222;
+}
+
+footer .inner-container {
 	height: 148px;
-	background: #222222 url("../img/footerbackground.png") no-repeat center center;
+	background: url("../img/footerbackground.png") no-repeat center center;
 }
 
 #made-by {
