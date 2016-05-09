@@ -27,7 +27,47 @@
 	border-radius: 15px;
 	padding: 4px 0;
 	margin-top: 10px;
+	font-size: 0;
 } 
+
+.social-media-container .social-media-icon {
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	//background-color: white;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 3px;
+	font-size: 20px;
+	line-height: 20px;
+}
+
+.social-media-container .social-media-icon.dribbble-red {
+	color: #ea4c89;
+}
+
+.social-media-container .social-media-icon.be-blue {
+	background-color: #0061ff;
+	color: #b9e1c8;
+	font-size: 10px;
+}
+
+.social-media-container .social-media-icon.be-blue i {
+	margin-top: 3px;
+}
+
+.twitter-blue-background {
+	background-color: #00aced;
+}
+
+.facebook-blue-background {
+	background-color: #1d53aa;
+}
+
+.social-media-container .social-media-icon i {
+	display: inline-block;
+	vertical-align: top;
+}
 
 .social-media-container img {
 	margin: 0 3px;
@@ -37,10 +77,6 @@
 .social-media-container img:hover {
 	opacity: 0.5;
     filter: alpha(opacity=50); /* For IE8 and earlier */
-}
-
-i {
-	margin-left: 10px;
 }
 
 header {
@@ -136,6 +172,10 @@ header .btn-work-with-us:hover {
 	color: #49a349;
 }
 
+header .btn-work-with-us i {
+	margin-left: 10px;
+}
+
 header .btn-scroll {
 	background-color: #c2bfbf;
 	padding: 3px 8px;
@@ -151,6 +191,10 @@ header .btn-scroll {
 header .btn-scroll:hover{
 	opacity: 0.8;
 	filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+header .btn-scroll i {
+	margin-left: 10px;
 }
 
 header .btn-scroll.scrolled {
@@ -213,10 +257,6 @@ section {
 	vertical-align: middle;
 	font-size: 85px;
 	color: #54d154;
-}
-
-#what-we-do .inner-container .info-container .info-img i {
-	margin: 0 auto;
 }
 
 #what-we-do .inner-container .info-container .info-img.center-background-img {
@@ -314,6 +354,7 @@ section {
 	display: inline-block;
 	vertical-align: top;
 	margin: 13px 15px;
+	transition: all 0.5s ease;
 }
 
 #image-1 {
@@ -369,6 +410,10 @@ section {
 #our-lastest-work .inner-container .btn-view-more-work:hover {
 	background-color: #1f7f1f;
 	color: #ffffff;
+}
+
+#our-lastest-work .inner-container .btn-view-more-work i {
+	margin-left: 15px;
 }
 
 #testimonials {
@@ -514,6 +559,10 @@ section {
 #clients .inner-container .btn-see-all-client:hover {
 	opacity: 0.7;
     filter: alpha(opacity=70); /* For IE8 and earlier */	
+}
+
+#clients .inner-container .btn-see-all-client i {
+	margin-left: 20px;
 }
 
 #the-team {
@@ -777,4 +826,13 @@ footer .inner-container {
 #made-by .inner-container h5 {
 	font-size: 16px;
 	font-weight: 300;
+}
+
+//popUp styles
+
+.popUpContainer {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(17,17,17,0.6);
+	position: fixed;
 }

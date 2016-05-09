@@ -5,9 +5,9 @@ $(".btn-work-type").on("click",function(){
 	$(this).addClass("selected");
 
 	if ($(this).index()==btnWorkType[0]){
-		$(".gallery-element").fadeIn(500);
+		$(".gallery-element").fadeIn(1000);
 	} else {
-		$(".gallery-element").fadeOut(500);	
+		$(".gallery-element").fadeOut(1000);	
 	}
 });
 
@@ -20,22 +20,26 @@ $("#contact-us-form").on("submit",function(){
 
 	//validation for empty name
 	if (userName.val().length==0){
-		sweetAlert("Please provide a Name");
+		alert("Please provide a Name");
+		userName.focus();
 		return false;
 	}
 	//validation for empty email
 	if (userEmail.val().length==0){
-		sweetAlert("Please provide an Email");
+		alert("Please provide an Email");
+		userEmail.focus();
 		return false;
 	}	
 	//validation for valid email
 	if (!emailRegEx.test(userEmail.val())) {
-		sweetAlert("Please provide a valid Email");
+		alert("Please provide a valid Email");
+		userEmail.focus();
 		return false;
 	}
 	//validation for empty message
 	if (userMessage.val().length==0){
-		sweetAlert("Please provide a Message");
+		alert("Please provide a Message");
+		userMessage.focus();
 		return false;
 	}
 }); //contact form validation
