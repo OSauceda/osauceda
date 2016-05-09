@@ -9,7 +9,7 @@ $(".btn-work-type").on("click",function(){
 	} else {
 		$(".gallery-element").fadeOut(1000);	
 	}
-});
+});//end Toggles the class "selected"
 
 //contact form validations
 $("#contact-us-form").on("submit",function(){
@@ -20,32 +20,32 @@ $("#contact-us-form").on("submit",function(){
 
 	//validation for empty name
 	if (userName.val().length==0){
-		alert("Please provide a Name");
+		alert("Please provide a Name.");
 		userName.focus();
 		return false;
 	}
 	//validation for empty email
 	if (userEmail.val().length==0){
-		alert("Please provide an Email");
+		alert("Please provide an Email.");
 		userEmail.focus();
 		return false;
 	}	
 	//validation for valid email
 	if (!emailRegEx.test(userEmail.val())) {
-		alert("Please provide a valid Email");
+		alert("Please provide a valid Email.");
 		userEmail.focus();
 		return false;
 	}
 	//validation for empty message
 	if (userMessage.val().length==0){
-		alert("Please provide a Message");
+		alert("Please provide a Message.");
 		userMessage.focus();
 		return false;
 	}
-}); //contact form validation
+}); //end of contact form validation
 
 //header scroll button
 $(".btn-scroll").on("click",function(){
 	$(this).toggleClass("scrolled");
 	$("header").toggleClass("scrolled");
-});
+});//header scroll button

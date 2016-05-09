@@ -72,7 +72,7 @@ function changeSelected(e) {
 }
 
 //scroll down header
-function scrollDownHeader(){
+var scrollDownHeader = function(){
 	var scrollHeaderButton = document.getElementById("header-scroll-btn"),
 		headerContainer = document.getElementById("prueba");
 
@@ -81,18 +81,17 @@ function scrollDownHeader(){
 }
 
 //pop up window object
-function popUpWindow(width,height,message) {
+var popUpWindow = function(width,height,message) {
 	this.width = width;
 	this.height = height;
 	this.message = message;
 	this.containerPopUp = document.createElement("div");
-	containerPopUp.addClass("popUpContainer");
-	this.openWindow = function() {
-		containerPopUp.appendTo('body');
-	};
-	
-}
+	this.containerPopUp.className="popUpContainer";
+};
 
+popUpWindow.prototype.openWindow = function() {
+	document.body.appendChild(this.containerPopUp);
+};
 
 //Listener for header scroll button
 var headerScrollButton = document.getElementById("header-scroll-btn");
@@ -112,8 +111,7 @@ contactForm.addEventListener("submit",validateContactForm,false);
 //Listener for popUp test button
 var popUpbtn = document.getElementById("pruebaPopUp");
 
-popUpbtn.addEventListener("click",function(){
-	var infoWindow = new popUpWindow();
-
-	infoWindow.openWindow();
+popUpbtn.addEventListener("click",function(e){
+	var infoPopUp = new popUpWindow();
+	infoPopUp.openWindow();
 },false);
