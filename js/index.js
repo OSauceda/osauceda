@@ -81,22 +81,67 @@ var scrollDownHeader = function(){
 }
 
 //modal window object
-var modalWindow = function(width,height,title,message) {
-	this.width = width;
-	this.height = height;
-	this.title = title;
-	this.message = message;
+function modalWindow (){
 	this.popUpContainer = document.createElement("div");
 	this.popUpContainer.className="popUpContainer";
 	this.popUpWindow = document.createElement("div");
 	this.popUpWindow.className="popUpWindow";
-	this.closeButton = document.createElement("");
-	this.titleTag = document.createElement("");
-	this.contentTag = document.createElement("");
+	this.closeButton = document.createElement("a");
+	this.closeButton.href = "#";
+	this.closeButtonImage = document.createElement("i");
+	this.closeButtonImage.className="fa fa-times-circle-o";
+	this.closeButtonImage.setAttribute("aria-hidden","true");
+	this.titleTag = document.createElement("h2");
+	this.contentTag = document.createElement("p");
+
+	//Assemble the modal window
+	this.popUpWindow.appendChild(this.closeButton).appendChild(this.closeButtonImage);
+	this.popUpWindow.appendChild(this.titleTag);
+	this.popUpWindow.appendChild(this.contentTag);
+	this.popUpContainer.appendChild(this.popUpWindow);
 };
 
-modalWindow.prototype.openWindow = function() {
+modalWindow.prototype.openWindow = function(width,height,title,content) {
+	this.width = width;
+	this.height = height;
+	this.title = title;
+	this.content = content;	
+	
+	if (this.height>0) {
+		this.popUpWindow.style.height = this.height + 'px';
+	}
+	if (this.width>0) {
+		this.popUpWindow.style.width = this.width + 'px';		
+	}
+	if (this.title.length===0) {
+		this.title = ""
+	} else {
+		this.title = title;
+	}
+	if (this.content.length===0) {
+		this.content = ""
+	} else {
+		this.content = content;
+	}
+	this.titleTagText = document.createTextNode(this.title);
+	this.titleTag.appendChild(this.titleTagText);
+	this.contentTagText = document.createTextNode(this.content);
+	this.contentTag.appendChild(this.contentTagText);
+	//this.popUpWindow.style.backgroundColor = 'white';
+	//this.popUpWindow.style.color = 'black';
+
+	//appends the modal window into the body
 	document.body.appendChild(this.popUpContainer);
+	this.closeWindow();
+};
+
+modalWindow.prototype.closeWindow = function() {
+	var modalWindow=this.popUpContainer;
+	//creates closing event on click
+	this.closeButton.addEventListener("click",function(e){
+		e.preventDefault();
+		modalWindow.remove();
+	},false);
 };
 
 //Listener for header scroll button
@@ -118,6 +163,8 @@ contactForm.addEventListener("submit",validateContactForm,false);
 var popUpbtn = document.getElementById("pruebaPopUp");
 
 popUpbtn.addEventListener("click",function(e){
+	e.preventDefault();
 	var infoPopUp = new modalWindow();
-	infoPopUp.openWindow();
+
+	infoPopUp.openWindow(400,800,"Hola","Esto es una prueba");
 },false);
