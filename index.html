@@ -52,13 +52,13 @@
 				<div class="info-img center-element"><i class="fa fa-tachometer" aria-hidden="true"></i></div>
 				<h4>Lorem Ipsum</h4>
 				<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,</p>
-				<a href="#" class="btn-stnd btn-learn-more center-element">Learn more</a>
+				<a href="#" class="btn-stnd btn-learn-more center-element" id="pruebaPopUp2">Learn more</a>
 			</div> <!-- info container -->
 			<div class="info-container">
 				<div class="info-img center-element"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
 				<h4>Lorem Ipsum</h4>
 				<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,</p>
-				<a href="#" class="btn-stnd btn-learn-more center-element">Learn more</a>
+				<a href="#" class="btn-stnd btn-learn-more center-element" id="pruebaPopUp3">Learn more</a>
 			</div> <!-- info container -->
 		</div> <!-- inner-container -->
 	</section> <!-- what-we-do -->
@@ -97,18 +97,22 @@
 			<p>Lorem ipsum dolor sit amet. Proin gravida nibh vel velit auctor aliquet.</p>
 			<div class="slide-container center-element center-text">
 				<img src="./img/leftarrow.png" alt="" class="left-arrow">
-				<p>&ldquo;Awalnya saya tidak menderita penyakit apapun,<br>
-					namun setelah saya tidak berobat ke klinik tongfang, saya dinyatakan<br>
-					tidak menderita penyakit apapun!&rdquo;
-				</p>
 				<img src="./img/rightarrow.png" alt="" class="right-arrow">
-				<div class="profile-container center-element">
-					<img src="./img/herp.png" alt="">
-					<div class="profile-description">
-						<h5>Mr. Herp</h5>
-						<h6>CEO of Meme, Inc.</h6>
-					</div> <!-- profile description -->
-				</div> <!-- profile container -->
+				
+				<div class="inner-slide-container">
+					<p>&ldquo;Awalnya saya tidak menderita penyakit apapun,<br>
+						namun setelah saya tidak berobat ke klinik tongfang, saya dinyatakan<br>
+						tidak menderita penyakit apapun!&rdquo;
+					</p>
+					<div class="profile-container center-element">
+						<img src="./img/herp.png" alt="">
+						<div class="profile-description">
+							<h5>Mr. Herp</h5>
+							<h6>CEO of Meme, Inc.</h6>
+						</div> <!-- profile description -->
+					</div> <!-- profile container -->
+				</div> <!-- inner-slide-container -->
+
 			</div> <!-- slide container -->
 		</div>
 	</section> <!-- testimonials -->
@@ -248,7 +252,7 @@
 						<a href="#" class="btn-stnd btn-post-type book center-text">BOOK</a>
 					</div> <!-- post description container -->
 				</div><!-- post container -->																
-				<div class="post-container">
+				<div class="post-container"> 
 					<img src="./img/post5.png" alt="">
 					<div class="post-description-container">
 						<h6>Lorem Ipsum Dolor Sit Amet.</h6>
@@ -264,14 +268,14 @@
 					New York NY 10010
 				</p>
 				<div><h6>Email:&nbsp;</h6><a href="#">Username@email.com</a></div>	
-				<div><h6>Phone:&nbsp;</h6><a href="#">+1 (0) 123 4567 890</a></div>
+				<div><h6>Phone:&nbsp;</h6><a href="#">+1 (0) 123 4567 890</a></div> 
 				<div><h6>Fax:&nbsp;</h6><a href="#">+1 (0) 321 4567 890</a></div>
 
 				<div class="contact-form-container">
 					<form class="contact-form" id="contact-us-form">
 						<input type="text" value="" placeholder="Your Name.." id="input-name">
 						<input type="text" value="" placeholder="Your Email.." id="input-email">
-						<textarea id="input-message" cols="35" rows="6" placeholder="Your Message.."></textarea>
+						<textarea id="input-message" cols="35" rows="6" placeholder="Your Message.." maxlength="140"></textarea>
 						<input type="submit" value="SEND" id="submit-send">
 					</form>
 				</div> <!-- contact form container -->

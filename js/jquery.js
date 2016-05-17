@@ -1,4 +1,4 @@
-//Toggles the class "selected"
+//TOGGLES THE CLASS "SELECTED"
 $(".btn-work-type").on("click",function(){
 	var btnWorkType = $(".btn-work-type")
 	btnWorkType.removeClass("selected");
@@ -9,43 +9,43 @@ $(".btn-work-type").on("click",function(){
 	} else {
 		$(".gallery-element").fadeOut(1000);	
 	}
-});//end Toggles the class "selected"
+});//END TOGGLES THE CLASS "SELECTED"
 
-//contact form validations
+//CONTACT FORM VALIDATIONS
 $("#contact-us-form").on("submit",function(){
 	var userName =$("#input-name"),
 		userEmail=$("#input-email"),
 		userMessage=$("#input-message"),
 		emailRegEx=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 
-	//validation for empty name
+	//VALIDATION FOR EMPTY NAME
 	if (userName.val().length==0){
 		alert("Please provide a Name.");
 		userName.focus();
 		return false;
 	}
-	//validation for empty email
+	//VALIDATION FOR EMPTY EMAIL
 	if (userEmail.val().length==0){
 		alert("Please provide an Email.");
 		userEmail.focus();
 		return false;
 	}	
-	//validation for valid email
+	//VALIDATION FOR VALID EMAIL
 	if (!emailRegEx.test(userEmail.val())) {
 		alert("Please provide a valid Email.");
 		userEmail.focus();
 		return false;
 	}
-	//validation for empty message
+	//VALIDATION FOR EMPTY MESSAGE
 	if (userMessage.val().length==0){
 		alert("Please provide a Message.");
 		userMessage.focus();
 		return false;
 	}
-}); //end of contact form validation
+}); //END OF CONTACT FORM VALIDATION
 
-//header scroll button
+//HEADER SCROLL BUTTON
 $(".btn-scroll").on("click",function(){
 	$(this).toggleClass("scrolled");
 	$("header").toggleClass("scrolled");
-});//header scroll button
+});//HEADER SCROLL BUTTON

@@ -449,36 +449,41 @@ section {
 	cursor: pointer
 }
 
-#testimonials .inner-container .slide-container p {
+#testimonials .inner-container .slide-container .inner-slide-container {
+	z-index: 1;
+	width: 100%;
+}
+
+#testimonials .inner-container .slide-container .inner-slide-container p {
 	font-size: 16px;
 	font-weight: 300;
 }
 
-#testimonials .inner-container .slide-container .profile-container {
+#testimonials .inner-container .slide-container .inner-slide-container .profile-container {
 	width: 200px;
 	font-size: 0;
 	margin-top: 15px;
 	text-align: justify;
 }
 
-#testimonials .inner-container .slide-container .profile-container img {
+#testimonials .inner-container .slide-container .inner-slide-container .profile-container img {
 	display: inline-block;
 	vertical-align: top;
 }
 
-#testimonials .inner-container .slide-container .profile-container .profile-description {
+#testimonials .inner-container .slide-container .inner-slide-container .profile-container .profile-description {
 	display: inline-block;
 	vertical-align: top;
 	margin: 4px 0 0 4px;
 }
 
-#testimonials .inner-container .slide-container .profile-container .profile-description h5 {
+#testimonials .inner-container .slide-container .inner-slide-container .profile-container .profile-description h5 {
 	font-size: 16px;
 	font-weight: 300;
 	margin-bottom: 5px;
 }
 
-#testimonials .inner-container .slide-container .profile-container .profile-description h6 {
+#testimonials .inner-container .slide-container .inner-slide-container .profile-container .profile-description h6 {
 	font-size: 16px;
 	font-weight: 700;
 	color: #d7d7d7;
@@ -828,7 +833,7 @@ footer .inner-container {
 	font-weight: 300;
 }
 
-/* Modal window styles */
+/* MODAL WINDOW STYLES */
 
 .popUpContainer {
 	width: 100%;
@@ -847,6 +852,7 @@ footer .inner-container {
 	text-align: center;
 	height: 500px;
 	width: 300px;
+	border-radius: 1%;
 	z-index: 200;
 	top: 50%;
 	left: 50%;
@@ -858,7 +864,11 @@ footer .inner-container {
 }
 
 .popUpContainer .popUpWindow h2{
-	margin: 25% 0 5% 0;
+	margin: 20% 0 5% 0;
+}
+
+.popUpContainer .popUpWindow p {
+	padding: 0 6%;
 }
 
 .popUpContainer .popUpWindow a {
@@ -871,4 +881,12 @@ footer .inner-container {
 .popUpContainer .popUpWindow a i {
 	font-size: 40px;
 	color: black;
+	transition: all ease 0.4s;
+}
+
+.popUpContainer .popUpWindow a i:hover {
+	-ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Safari */
+    transform: rotate(180deg);
+    opacity: 0.9;
 }

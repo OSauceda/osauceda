@@ -1,42 +1,38 @@
-//contact form validations
+//CONTACT FORM VALIDATIONS
 function validateContactForm(){
 	var contactFormInputName = document.getElementById("input-name"),
 		contactFormInputEmail = document.getElementById("input-email"),
 		contactFormInputMessage = document.getElementById("input-message");
 
-	//validate if the name field is empty
+	//VALIDATE IF THE NAME FIELD IS EMPTY
 	if (contactFormInputName.value.length==0){
-		//alert("Please provide your name.");
 		sweetAlert("Please provide your name.");
 		contactFormInputName.focus();
 		return false;
 	}
-	//validate if the email field is empty
+	//VALIDATE IF THE EMAIL FIELD IS EMPTY
 	if (contactFormInputEmail.value.length==0){
-		//alert("Please provide your Email.");
 		sweetAlert("Please provide your Email.");
 		contactFormInputEmail.focus();
 		return false;
 	}	
 
-	//validate if a valid email was provided
+	//VALIDATE IF A VALID EMAIL WAS PROVIDED
 	var emailPattern = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
 	if (!emailPattern.test(contactFormInputEmail.value)){
-		//alert("Please provide a valid email address");
 		sweetAlert("Please provide a valid email address");
 		contactFormInputEmail.focus();
 		return false;
 	}
-	//validate if the message field is empty
+	//VALIDATE IF THE MESSAGE FIELD IS EMPTY
 	if (contactFormInputMessage.value.length==0){
-		//alert("Please provide a Message.");
 		sweetAlert("Please provide a Message.");
 		contactFormInputMessage.focus();
 		return false;
 	}
-} //validate contact form
+} //VALIDATE CONTACT FORM
 
-//change selected item
+//CHANGE SELECTED ITEM
 function changeSelected(e) {
 	var galleryButtons = document.getElementsByClassName("btn-work-type"),
 		galleryElements = document.getElementsByClassName("gallery-element"),
@@ -47,7 +43,7 @@ function changeSelected(e) {
 	}
 	e.target.classList.add("selected");
 
-	//hide gallery elements
+	//HIDE GALLERY ELEMENTS
 	for (var i = 0 ; i <= galleryElements.length-1; i++) {
 		if (e.target.id !== "photography-btn") {
 			galleryElements[i].classList.add("display-hidden");
@@ -71,7 +67,7 @@ function changeSelected(e) {
 	// }
 }
 
-//scroll down header
+//SCROLL DOWN HEADER
 var scrollDownHeader = function(){
 	var scrollHeaderButton = document.getElementById("header-scroll-btn"),
 		headerContainer = document.getElementById("prueba");
@@ -80,8 +76,8 @@ var scrollDownHeader = function(){
 		scrollHeaderButton.classList.toggle("scrolled");
 }
 
-//modal window object
-function modalWindow (){
+//MODAL WINDOW OBJECT
+function modalWindow () {
 	this.popUpContainer = document.createElement("div");
 	this.popUpContainer.className="popUpContainer";
 	this.popUpWindow = document.createElement("div");
@@ -94,77 +90,109 @@ function modalWindow (){
 	this.titleTag = document.createElement("h2");
 	this.contentTag = document.createElement("p");
 
-	//Assemble the modal window
+	//ASSEMBLE THE MODAL WINDOW
 	this.popUpWindow.appendChild(this.closeButton).appendChild(this.closeButtonImage);
 	this.popUpWindow.appendChild(this.titleTag);
 	this.popUpWindow.appendChild(this.contentTag);
 	this.popUpContainer.appendChild(this.popUpWindow);
 };
 
-modalWindow.prototype.openWindow = function(width,height,title,content) {
-	this.width = width;
-	this.height = height;
-	this.title = title;
-	this.content = content;	
-	
-	if (this.height>0) {
-		this.popUpWindow.style.height = this.height + 'px';
-	}
-	if (this.width>0) {
-		this.popUpWindow.style.width = this.width + 'px';		
-	}
-	if (this.title.length===0) {
-		this.title = ""
+modalWindow.prototype.openWindow = function(settings) {	
+	//EVALUATE PARAMETERS	
+	if (settings.title && settings.title.length > 0) {
+		this.titleTagText = document.createTextNode(settings.title);
 	} else {
-		this.title = title;
+		this.titleTagText = document.createTextNode("");
 	}
-	if (this.content.length===0) {
-		this.content = ""
-	} else {
-		this.content = content;
-	}
-	this.titleTagText = document.createTextNode(this.title);
-	this.titleTag.appendChild(this.titleTagText);
-	this.contentTagText = document.createTextNode(this.content);
-	this.contentTag.appendChild(this.contentTagText);
-	//this.popUpWindow.style.backgroundColor = 'white';
-	//this.popUpWindow.style.color = 'black';
 
-	//appends the modal window into the body
+	if (settings.content && settings.content.length > 0) {
+		this.contentTagText = document.createTextNode(settings.content);
+	} else {
+		this.contentTagText = document.createTextNode("");
+	}
+
+	if (settings.width && settings.width > 0) {
+		this.popUpWindow.style.height = settings.height + 'px';
+	}
+
+	if (settings.height && settings.height > 0) {
+		this.popUpWindow.style.width = settings.width + 'px';	
+	} 
+
+	this.titleTag.appendChild(this.titleTagText);
+	this.contentTag.appendChild(this.contentTagText);
+
+	//APPENDS MODAL WINDOW INTO THE BODY
 	document.body.appendChild(this.popUpContainer);
 	this.closeWindow();
 };
 
 modalWindow.prototype.closeWindow = function() {
-	var modalWindow=this.popUpContainer;
-	//creates closing event on click
+	var modalWindow = this.popUpContainer;
+
+	//CREATES CLOSING EVENT
 	this.closeButton.addEventListener("click",function(e){
 		e.preventDefault();
 		modalWindow.remove();
 	},false);
+
+	// document.addEventListener("keydown",function(e){
+	// 	e.preventDefault();
+	// 	var key = e.keyCode;
+	// 	console.log(key);
+	// 	if (key===27 && document.contains(modalWindow)) {
+	// 		modalWindow.remove();
+	// 	}
+	// },false);
 };
 
-//Listener for header scroll button
+//LISTENER FOR HEADER SCROLL BUTTON
 var headerScrollButton = document.getElementById("header-scroll-btn");
 
 headerScrollButton.addEventListener('click',scrollDownHeader,false);
 
-//Listener for lastest work galleries
+//LISTENER FOR LASTEST WORK GALLERIES
 var galleryButtonContainer = document.getElementById("btn-work-type-container");
 
 galleryButtonContainer.addEventListener('click',changeSelected,false);
 
-//Listener for contact button
+//LISTENER FOR CONTACT BUTTON
 var contactForm = document.getElementById("contact-us-form");
 
 contactForm.addEventListener("submit",validateContactForm,false);
 
-//Listener for popUp test button
+//LISTENER FOR POPUP TEST BUTTON
 var popUpbtn = document.getElementById("pruebaPopUp");
+var popUpbtn2 = document.getElementById("pruebaPopUp2");
+var popUpbtn3 = document.getElementById("pruebaPopUp3");
 
 popUpbtn.addEventListener("click",function(e){
 	e.preventDefault();
 	var infoPopUp = new modalWindow();
 
-	infoPopUp.openWindow(400,800,"Hola","Esto es una prueba");
+	infoPopUp.openWindow({title: "Lorem ipsum",
+						content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+						width: 400,
+						height: 800});
 },false);
+
+popUpbtn2.addEventListener("click",function(e){
+	e.preventDefault();
+	var infoPopUp2= new modalWindow();
+
+	infoPopUp2.openWindow({title: "Lorem ipsum",
+						content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+						width: 300,
+						height: 600});
+},false);
+
+popUpbtn3.addEventListener("click",function(e){
+	e.preventDefault();
+	var infoPopUp3 = new modalWindow();
+
+	infoPopUp3.openWindow({title: "Lorem ipsum",
+						content: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+						width: 400,
+						height: 400});
+},false);
+
